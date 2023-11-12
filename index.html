@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The Canvas of Dreams</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `In a quiet village nestled between rolling hills, there lived a young artist named Alex. They had a passion for painting and dreamt of turning the village's old, abandoned walls into a vibrant mural that would tell the story of the community.
+
+However, the villagers were skeptical. The walls were a reminder of the village's past struggles, and they hesitated to embrace change. Undeterred, Alex decided to start with a small section of the wall, hoping that the colors would slowly win over hearts.
+
+As Alex painted, curious children gathered around, asking questions and sharing their own dreams. Inspired, the elders of the village began to see the beauty in Alex's vision. Slowly, the entire community joined in, each adding their own strokes to the mural.
+
+The once-muted walls transformed into a breathtaking masterpiece, depicting the dreams, struggles, and triumphs of the village. The project not only brought the community together but also attracted tourists who marveled at the village's unique artwork.
+
+Moral:
+Dreams are like colors waiting to be painted onto the canvas of life. Even the smallest contribution can turn a dull wall into a masterpiece. Embrace the dreams of others, and together, you can create a world more vibrant and beautiful than you ever imagined.
+
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
